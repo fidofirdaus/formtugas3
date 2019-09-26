@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Sign Up</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Nunito:400,300">
+</head>
+<body>
+	<form>
+		<h1>Sign Up</h1>
+		<fieldset>
+			<legend><span class="section">1</span>Your Basic Info</legend>
+
+		<label>Username : </label>
+		<input type="text" name="username" autocomplete="off" required>
+
+		<label>Email : </label>
+		<input type="email" name="email" autocomplete="off" required>
+
+		<label>ID Number : </label>
+		<input type="text" name="id_number" autocomplete="off" maxlength="13" onkeypress="isInputNumber(event)" required>
+			<script>
+				function isInputNumber(evt){
+					var ch = String.fromCharCode(evt.which);
+					if(!(/[0-9]/.test(ch))){
+						evt.preventDefault();
+					}
+				}
+			</script>
+		
+		<label>Password : </label>
+		<input type="password" name="password" required>
+
+		<label>Age : </label>
+		<input type="radio" name="age" value="under_18">
+		<label class="light" for="under_18">Under 18</label>
+
+		<input type="radio" name="age" value="over_18">
+		<label class="light" for="over_18">Over 18</label>
+		</fieldset>
+	
+		<fieldset>
+			<legend><span class="section">2</span>Your Profile</legend>
+
+			<label for="bio">Bio : </label>
+			<textarea name="bio" placeholder="About Yourself"></textarea>
+
+			<label for="job">Job Role : </label>
+			<select name="job">
+				<optgroup label="Web">
+					<option value="frontend_dev">Frontend Developer</option>
+					<option value="backend_dev">Backend Developer</option>
+					<option value="fullstack_dev">Fullstack Developer</option>
+					<option value="web_design">Web Designer</option>
+				</optgroup>
+
+				<optgroup label="Mobile">
+					<option value="android_dev">Android Developer</option>
+					<option value="ios_dev">iOS Developer</option>
+					<option value="mobile_design">Mobile Designer</option>
+				</optgroup>
+			</select>
+
+			<label>Interest : </label>
+
+		<input type="checkbox" value="interest_development" name="user_interest">
+		<label class="light" for="development">Development</label>
+		<input type="checkbox" value="interest_design" name="user_interest">
+		<label class="light" for="design">Design</label>
+		<input type="checkbox" value="interest_bussiness" name="user_interest">
+		<label class="light" for="bussiness">Bussiness</label>
+		</fieldset>
+
+		<button type="submit" onclick="confirm('Are you sure to submit this form?')">Sign Up</button>
+
+	</form>
+
+
+
+</body>
+</html>
